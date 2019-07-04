@@ -1,105 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class=playerID>
-        <form id=top_sheet>
-            Character Name:<br>
-            <input type="text" name="characterName"><br>
-            Race:<br>
-            <select id=race>
-                <optgroup label="Dwarf">
-                <option>Hill Dwarf</option>
-                <option>Mountain Dwarf</option>
-                </optgroup>
-                <optgroup label="Elf">
-                <option>High Elf</option>
-                <option>Wood Elf</option>
-                </optgroup>
-                <optgroup label="Halfling">
-                <option>Light Foot</option>
-                <option>Stout</option>
-                </optgroup>
-                <option>Human</option>
-            </select><br>
-            Class:<br>
-            <select id=classP>
-                <option>Fighter</option>
-                <option>Cleric</option>
-                <option>Rogue</option>
-                <option>Wizard</option>
-            </select><br>
-            Occupation:<br>
-            <select id=Occupation>
-                <option>Acolyte</option>
-                <option>Criminal</option>
-                <option>Folk Hero</option>
-                <option>Noble</option>
-                <option>Sage</option>
-                <option>Soldier</option>
-            </select><br>
-            Alignment:<br>
-            <select id=Alignment>
-                <option>Lawful Good</option>
-                <option>Neutral Good</option>
-                <option>Chaotic Good</option>
-                <option>Lawful Neutral</option>
-                <option>Neutral</option>
-                <option>Chaotic Neutral</option>
-                <option>Lawful Evil</option>
-                <option>Neutral Evil</option>
-                <option>Chaotic Evil</option>
-            </select><br>
-            Gender:<br>
-            <input type="text" name="Gender"><br>
-            Height:<br>
-            <input type="text" name="height"><br>
-            Weight:<br>
-            <input type="number" name="Weight"><br>
-            Player Name:<br>
-            <input type="text" name="playerName"><br>
-
-        </form>
+    <div class="background">
+        <div class="front_text">
+            <h3>Create a character for D&D</h3>
+            <p>A easy way to get a sweet character</p>
+            <button id=get_inside href=>Create!</button>
+        </div>    
     </div>
-    <div class= ability_score>
-        <button id=generate_score onclick="attribute()">Generate!</button>
-        <ul>
-            <li>Strength</li>
-            <li>Score</li>
-            <li class='att_score'></li>
-            <li>Modifier</li>
-            <li class='modifier'></li>
-            <li>Dexterity</li>
-            <li>Score</li>
-            <li class='att_score'></li>
-            <li>Modifier</li>
-            <li class='modifier'></li>
-            <li>Constitution</li>
-            <li>Score</li>
-            <li class='att_score'></li>
-            <li>Modifier</li>
-            <li class='modifier'></li>
-            <li>Intelligence</li>
-            <li>Score</li>
-            <li class='att_score'></li>
-            <li>Modifier</li>
-            <li class='modifier'></li>
-            <li>Wisdom</li>
-            <li>Score</li>
-            <li class='att_score'></li>
-            <li>Modifier</li>
-            <li class='modifier'></li>
-            <li>Charisma</li>
-            <li>Score</li>
-            <li class='att_score'></li>
-            <li>Modifier</li>
-            <li class='modifier'></li>
-        </ul>
-    </div>
-    <script type="text/JavaScript" src=script.js></script>
-    </body>
-
+</body>
 </html>
