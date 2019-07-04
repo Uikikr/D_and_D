@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="character_style.css">
 </head>
 <body>
     <div class=playerID>
@@ -11,6 +12,7 @@
             <input type="text" name="characterName"><br>
             Race:<br>
             <select id=race>
+                <option>---</option>
                 <optgroup label="Dwarf">
                 <option>Hill Dwarf</option>
                 <option>Mountain Dwarf</option>
@@ -27,6 +29,7 @@
             </select><br>
             Class:<br>
             <select id=classP>
+                <option>----</option>
                 <option>Fighter</option>
                 <option>Cleric</option>
                 <option>Rogue</option>
@@ -34,6 +37,7 @@
             </select><br>
             Occupation:<br>
             <select id=Occupation>
+                <option>----</option>
                 <option>Acolyte</option>
                 <option>Criminal</option>
                 <option>Folk Hero</option>
@@ -42,16 +46,23 @@
                 <option>Soldier</option>
             </select><br>
             Alignment:<br>
-            <select id=alignment onselect="getAlignmentDescription()">
+            <select id=alignment onchange="getAlignmentDescription()">
+                <option>----</option>
+                <optgroup label="Good">
                 <option>Lawful Good</option>
                 <option>Neutral Good</option>
                 <option>Chaotic Good</option>
+                </optgroup>
+                <optgroup label="Neutral">
                 <option>Lawful Neutral</option>
                 <option>Neutral</option>
                 <option>Chaotic Neutral</option>
+                </optgroup>
+                <optgroup label="Evil">
                 <option>Lawful Evil</option>
                 <option>Neutral Evil</option>
                 <option>Chaotic Evil</option>
+                </optgroup>
             </select><br>
             Gender:<br>
             <input type="text" name="Gender"><br>
@@ -99,9 +110,30 @@
             <li class='modifier'></li>
         </ul>
     </div>
+    <div class="passive_wisdome"></div><p>Passive Wisdome</p>
+    <div class="player_stats">
+    <p id="armourclass"></p><br>
+    <p>armour class</p>
+    <p id="initiative"></p>
+    <p>initiative</p>
+    <p id="Speed"></p>
+    <p>Speed</p>
+    <p id="hp"></p>
+    <p>Maximum hit points</p>
+    </div>
     <div class="background">
         <h2>Alignment description</h2>
-        <p class="align_desc"></p>
+        <p id="align_desc"></p>
+        <form>
+        <h2>Personality traits</h2>
+        <textarea name="per_trait" rows="10" cols="30">What is your traits?</textarea>
+        <h2>Ideals</h2>
+        <textarea name="ideals" rows="10" cols="30">What is your ideals?</textarea>
+        <h2>Bonds</h2>
+        <textarea name="bonds" rows="10" cols="30">Do you have any friends? Haha no you play D&D</textarea>
+        <h2>Flaws</h2>
+        <textarea name="flaws" rows="10" cols="30">Surley you have a few of these!</textarea>
+        </form>
     </div>
     <script type="text/JavaScript" src=script.js></script>
     </body>
