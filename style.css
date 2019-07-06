@@ -4,6 +4,7 @@ html {
 
 h2 {
     font-size: 5em;
+    z-index: 1;
 }
 p {
     font-size: 2em;
@@ -19,11 +20,10 @@ a:link, a:visited {
 }
 
 body {
-    background: url('background.jpg') no-repeat center fixed;
+    background: url('background1.jpg') no-repeat center fixed;
     height: 100%;
-    opacity: 0.65;
+    opacity: 0.85;
     background-size: cover;
-    z-index: -1;
 }
 
 .front_text {
