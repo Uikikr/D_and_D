@@ -28,13 +28,15 @@
                 <option>Human</option>
             </select><br>
             Class:<br>
-            <select id=classP>
+            <select id=classP onchange="classAttributes()">
                 <option>----</option>
                 <option>Fighter</option>
                 <option>Cleric</option>
                 <option>Rogue</option>
                 <option>Wizard</option>
             </select><br>
+            Level:<br>
+            <p id="level"></p><br>
             Occupation:<br>
             <select id=Occupation>
                 <option>----</option>
@@ -45,7 +47,7 @@
                 <option>Sage</option>
                 <option>Soldier</option>
             </select><br>
-            Alignment:<br>
+            <p>Alignment:</p><br>
             <select id=alignment onchange="getAlignmentDescription()">
                 <option>----</option>
                 <optgroup label="Good">
@@ -64,6 +66,8 @@
                 <option>Chaotic Evil</option>
                 </optgroup>
             </select><br>
+            <p>Experience points:</p><br>
+            <input type="number" name="Experience" id="XP" onkeypress="generateLevel()" min="0" max="355000" value="0">
             Gender:<br>
             <input type="text" name="Gender"><br>
             Height:<br>
@@ -120,6 +124,8 @@
     <p>Speed</p>
     <p id="hp"></p>
     <p>Maximum hit points</p>
+    <p id="hit_die"></p>
+    <p>Current hit die</pß>
     </div>
     <div class="background">
         <h2>Alignment description</h2>

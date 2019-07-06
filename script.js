@@ -5,13 +5,35 @@ function attribute() {
         pointEls[i].innerHTML = randomN;
         document.getElementsByClassName('modifier')[i].innerHTML = Math.floor(randomN / 2 - 5);
     };
-}
+};
 
 function getAlignmentDescription() {
     const sourceAlignment = document.getElementById('alignment');
     let selectAlignment = sourceAlignment.options[sourceAlignment.selectedIndex].value;
-    document.getElementById('align_desc').innerHTML = alignment[selectAlignment].description
+    console.log(sourceAlignment.selectedIndex);
+    document.getElementById('align_desc').innerHTML = alignment[selectAlignment].description;
+};
+
+function classAttributes() {
+    const sourceClass = document.getElementById('classP');
+    let selectedClass = sourceClass.options[sourceClass.selectedIndex].value;
+    console.log(selectedClass)
+    document.getElementById('hit_die').innerhtml = classP[selectedClass].hitdice;
+    document.getElementById('hp').innerhtml = classP[selectedClass].hitpoints;
 }
+
+const xpLevel = [0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000]
+
+function generateLevel() {
+    const getXpPoints = document.getElementById('XP');
+    let selectedXp = getXpPoints.value;
+    console.log(selectedXp)
+    xpLevel.forEach((s, l) => {
+        if(selectedXp >= s) {
+        document.getElementById('level').innerHTML = l+1;
+        }
+     });
+    };
 
 const Races = {
     'dwarf': {
@@ -19,6 +41,26 @@ const Races = {
     },
     'High elf': {
         height: 250
+    }
+};
+
+const classP = {
+    'fighter': {
+        hitdice: 'd10',
+        hitpoints: 10,
+
+    },
+    'cleric': {
+        hitdice: 'd8',
+        hitpoints: 8,
+    },
+    'rogue': {
+        hitdice: 'd8',
+        hitpoints: 8,
+    },
+    'wizard': {
+        hitdice: 'd6',
+        hitpoints: 6, 
     }
 }
 
@@ -52,5 +94,6 @@ const alignment = {
     }
 }
 
-Races['High elf'].height
-
+function test(num){
+    console.log(num + Class['fighter'].hitdice)
+}
