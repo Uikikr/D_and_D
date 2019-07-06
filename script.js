@@ -18,7 +18,8 @@ function classAttributes() {
     const sourceClass = document.getElementById('classP');
     let selectedClass = sourceClass.options[sourceClass.selectedIndex].value;
     console.log(selectedClass)
-    document.getElementById('hit_die').innerhtml = classP[selectedClass].hitdice;
+    console.log(document.getElementById('level').innerHTML + classP[selectedClass].hitdice)
+    document.getElementById('hit_die').innerhtml = document.getElementById('level').innerHTML + classP[selectedClass].hitdice;
     document.getElementById('hp').innerhtml = classP[selectedClass].hitpoints;
 }
 
@@ -45,20 +46,20 @@ const Races = {
 };
 
 const classP = {
-    'fighter': {
+    'Fighter': {
         hitdice: 'd10',
         hitpoints: 10,
 
     },
-    'cleric': {
+    'Cleric': {
         hitdice: 'd8',
         hitpoints: 8,
     },
-    'rogue': {
+    'Rogue': {
         hitdice: 'd8',
         hitpoints: 8,
     },
-    'wizard': {
+    'Wizard': {
         hitdice: 'd6',
         hitpoints: 6, 
     }

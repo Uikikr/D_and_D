@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="character_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Homemade+Apple&display=swap" rel="stylesheet">
+    <title>Character creation!</title>
 </head>
 <body>
     <div class=playerID>
-        <form id=top_sheet>
-            Character Name:<br>
-            <input type="text" name="characterName"><br>
-            Race:<br>
+        <form class="top_sheet 1">
+            <p>Character Name:</p>
+            <input type="text" name="characterName">
+            <p>Race:</p>
             <select id=race>
                 <option>---</option>
                 <optgroup label="Dwarf">
@@ -26,18 +28,18 @@
                 <option>Stout</option>
                 </optgroup>
                 <option>Human</option>
-            </select><br>
-            Class:<br>
+            </select>
+            <p>Class:</p>
             <select id=classP onchange="classAttributes()">
                 <option>----</option>
                 <option>Fighter</option>
                 <option>Cleric</option>
                 <option>Rogue</option>
                 <option>Wizard</option>
-            </select><br>
-            Level:<br>
-            <p id="level"></p><br>
-            Occupation:<br>
+            </select>
+            <p>Level:</p>
+            <p id="level"></p>
+            <p>Occupation:</p>
             <select id=Occupation>
                 <option>----</option>
                 <option>Acolyte</option>
@@ -46,8 +48,8 @@
                 <option>Noble</option>
                 <option>Sage</option>
                 <option>Soldier</option>
-            </select><br>
-            <p>Alignment:</p><br>
+            </select>
+            <p>Alignment:</p>
             <select id=alignment onchange="getAlignmentDescription()">
                 <option>----</option>
                 <optgroup label="Good">
@@ -65,17 +67,19 @@
                 <option>Neutral Evil</option>
                 <option>Chaotic Evil</option>
                 </optgroup>
-            </select><br>
-            <p>Experience points:</p><br>
+            </select>
+            <p>Experience points:</p>
             <input type="number" name="Experience" id="XP" onkeypress="generateLevel()" min="0" max="355000" value="0">
-            Gender:<br>
-            <input type="text" name="Gender"><br>
-            Height:<br>
-            <input type="text" name="height"><br>
-            Weight:<br>
-            <input type="number" name="Weight"><br>
-            Player Name:<br>
-            <input type="text" name="playerName"><br>
+        </form>
+        <form class="top_sheet 2">
+            <p>Gender:</p>
+            <input type="text" name="Gender">
+            <p>Height:</p>
+            <input type="text" name="height">
+            <p>Weight:</p>
+            <input type="number" name="Weight">
+            <p>Player Name:</p>
+            <input type="text" name="playerName">
 
         </form>
     </div>

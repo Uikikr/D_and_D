@@ -1,21 +1,31 @@
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
+html {
+    font-family: 'Emilys Candy';
 }
 
 h2 {
-    font-family: 'lobster';
-    font-size: 4em;
+    font-size: 5em;
+}
+p {
+    font-size: 2em;
 }
 
-.background {
+a:link, a:visited {
+    text-decoration: none;
+    color: #ffffff;
+    border: solid;
+    border-color: #ffffff;
+    padding: 0.5em;
+    font-size: 2em;
+}
+
+body {
     background: url('background.jpg') no-repeat center fixed;
-    height: 900px;
+    height: 100%;
     opacity: 0.65;
     background-size: cover;
     z-index: -1;
-    }
+}
+
 .front_text {
     position: absolute;
     left: 25%;

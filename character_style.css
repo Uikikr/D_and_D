@@ -1,5 +1,24 @@
-#top_sheet {
+html {
+    font-family: 'Emilys Candy';
+}
+
+input[name=characterName]{
+    width: 9em;
+}
+input[name=Experience]{
+    width: 5em;
+}
+
+.top_sheet {
     display: flex;
-    align-content: center;
-    flex-direction: row
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    justify-content: center;
+}
+
+.top_sheet p {
+    padding-left: 20px;
 }
