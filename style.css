@@ -1,5 +1,6 @@
 html {
     font-family: 'Emilys Candy';
+    text-shadow: 2px 2px 4px #000000;
 }
 
 h2 {
@@ -8,6 +9,7 @@ h2 {
 }
 p {
     font-size: 2em;
+    color: white;
 }
 
 a:link, a:visited {
@@ -32,4 +34,17 @@ body {
     top: 50%;
     text-align: center;
     color: #ffffff;
+}
+
+@media screen and (max-width: 800px) {
+    .front_text {
+        text-align: center;
+        align-items: center;
+        color: #ffffff;
+        left: 0;
+        top: auto;
+    }
+    h2 {
+        font-size: 4em;
+    }
 }

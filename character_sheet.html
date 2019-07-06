@@ -13,7 +13,7 @@
             <p>Character Name:</p>
             <input type="text" name="characterName">
             <p>Race:</p>
-            <select id=race>
+            <select id=race onchange="raceAttributes()">
                 <option>---</option>
                 <optgroup label="Dwarf">
                 <option>Hill Dwarf</option>
@@ -38,7 +38,7 @@
                 <option>Wizard</option>
             </select>
             <p>Level:</p>
-            <p id="level"></p>
+            <p id="level" class="levelC"></p>
             <p>Occupation:</p>
             <select id=Occupation>
                 <option>----</option>
@@ -88,34 +88,34 @@
         <ul>
             <li>Strength</li>
             <li>Score</li>
-            <li class='att_score'></li>
+            <li class='att_score' id="strsco"></li>
             <li>Modifier</li>
-            <li class='modifier'></li>
+            <li class='modifier' id="strmod"></li>
             <li>Dexterity</li>
             <li>Score</li>
-            <li class='att_score'></li>
+            <li class='att_score' id="dexsco"></li>
             <li>Modifier</li>
-            <li class='modifier'></li>
+            <li class='modifier' id="dexmod"></li>
             <li>Constitution</li>
             <li>Score</li>
-            <li class='att_score'></li>
+            <li class='att_score' id="consco"></li>
             <li>Modifier</li>
-            <li class='modifier'></li>
+            <li class='modifier' id="conmod"></li>
             <li>Intelligence</li>
             <li>Score</li>
-            <li class='att_score'></li>
+            <li class='att_score' id="intsco"></li>
             <li>Modifier</li>
-            <li class='modifier'></li>
+            <li class='modifier' id="intmod"></li>
             <li>Wisdom</li>
             <li>Score</li>
-            <li class='att_score'></li>
+            <li class='att_score' id="wissco"></li>
             <li>Modifier</li>
-            <li class='modifier'></li>
+            <li class='modifier' id="wismod"></li>
             <li>Charisma</li>
             <li>Score</li>
-            <li class='att_score'></li>
+            <li class='att_score' id="chasco"></li>
             <li>Modifier</li>
-            <li class='modifier'></li>
+            <li class='modifier' id="chamod"></li>
         </ul>
     </div>
     <div class="passive_wisdome"></div><p>Passive Wisdome</p>

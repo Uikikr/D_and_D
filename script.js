@@ -1,3 +1,8 @@
+//Global varibles
+const xpLevel = [0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000]
+//let startLevel = generateLevel()
+
+//Functions
 function attribute() {
     const pointEls = document.getElementsByClassName('att_score');
     for (i = 0; i < pointEls.length; i++) {
@@ -19,26 +24,42 @@ function classAttributes() {
     let selectedClass = sourceClass.options[sourceClass.selectedIndex].value;
     console.log(selectedClass)
     console.log(document.getElementById('level').innerHTML + classP[selectedClass].hitdice)
-    document.getElementById('hit_die').innerhtml = document.getElementById('level').innerHTML + classP[selectedClass].hitdice;
-    document.getElementById('hp').innerhtml = classP[selectedClass].hitpoints;
+    document.getElementById('hit_die').innerHTML = document.getElementById('level').innerHTML + classP[selectedClass].hitdice;
+    function hpGenerator() {
+        if (document.getElementById('level').innerHTML >= 1) {
+            document.getElementById('hp').innerHTML = classP[selectedClass].hitpoints;
+        } else {
+            document.getElementById('hp').innerHTML = classP[selectedClass].hitpoints + classP[selectedClass].hitPointLevel;
+        }
+    };
+    hpGenerator()
 }
 
-const xpLevel = [0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000]
+function raceAttributes() {
+    const sourceRace = document.getElementById('race');
+    let selectedRace = sourceRace.options[sourceRace.selectedIndex].value;
+    console.log(selectedRace)
+    document.getElementById('Speed').innerHTML = Races[selectedRace].speed;
+    console.log(Races[selectedRace].ability);
+}
 
 function generateLevel() {
     const getXpPoints = document.getElementById('XP');
     let selectedXp = getXpPoints.value;
     console.log(selectedXp)
     xpLevel.forEach((s, l) => {
-        if(selectedXp >= s) {
-        document.getElementById('level').innerHTML = l+1;
+        if (selectedXp >= s) {
+            document.getElementById('level').innerHTML = l + 1
+                ;
         }
-     });
-    };
+    });
+};
 
+//Objects
 const Races = {
-    'dwarf': {
-        height: 50
+    'Hill Dwarf': {
+        speed: 25,
+        ability: parseInt(document.getElementById('consco').innerHTML) + 2, //why you no work? Bork
     },
     'High elf': {
         height: 250
@@ -49,19 +70,22 @@ const classP = {
     'Fighter': {
         hitdice: 'd10',
         hitpoints: 10,
-
+        hitPointLevel: Math.floor(Math.random() * (10 - 1 + 1) + 1),
     },
     'Cleric': {
         hitdice: 'd8',
         hitpoints: 8,
+        hitPointLevel: Math.floor(Math.random() * (8 - 1 + 1) + 1),
     },
     'Rogue': {
         hitdice: 'd8',
         hitpoints: 8,
+        hitPointLevel: Math.floor(Math.random() * (8 - 1 + 1) + 1),
     },
     'Wizard': {
         hitdice: 'd6',
-        hitpoints: 6, 
+        hitpoints: 6,
+        hitPointLevel: Math.floor(Math.random() * (6 - 1 + 1) + 1)
     }
 }
 
@@ -95,6 +119,6 @@ const alignment = {
     }
 }
 
-function test(num){
-    console.log(num + Class['fighter'].hitdice)
-}
+function test(Races) {
+    console.log(classP.hitPointLevel)
+};
