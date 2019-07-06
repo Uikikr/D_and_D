@@ -20,7 +20,7 @@ a:link, a:visited {
 }
 
 body {
-    background: url('background.jpg') no-repeat center fixed;
+    background: url('background1.jpg') no-repeat center fixed;
     height: 100%;
     opacity: 0.85;
     background-size: cover;
@@ -30,7 +30,6 @@ body {
     position: absolute;
     left: 25%;
     top: 50%;
-    width: 100%;
     text-align: center;
     color: #ffffff;
 }
