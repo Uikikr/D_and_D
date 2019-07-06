@@ -20,7 +20,7 @@ a:link, a:visited {
 }
 
 body {
-    background: url('background1.jpg') no-repeat center fixed;
+    background: url('background.jpg') no-repeat center fixed;
     height: 100%;
     opacity: 0.85;
     background-size: cover;
