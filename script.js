@@ -40,6 +40,7 @@ function raceAttributes() {
     let selectedRace = sourceRace.options[sourceRace.selectedIndex].value;
     console.log(selectedRace)
     document.getElementById('Speed').innerHTML = Races[selectedRace].speed;
+    document.getElementById('consco').innerHTML = Races[selectedRace].ability;
     console.log(Races[selectedRace].ability);
 }
 
@@ -59,7 +60,9 @@ function generateLevel() {
 const Races = {
     'Hill Dwarf': {
         speed: 25,
-        ability: parseInt(document.getElementById('consco').innerHTML) + 2, //why you no work? Bork
+        ability: () => {
+            parseInt(document.getElementById('consco').innerHTML) + 2
+        }, //why you no work? Bork
     },
     'High elf': {
         height: 250

@@ -83,6 +83,7 @@
 
         </form>
     </div>
+    <div class="wrap_1">
     <div class= ability_score>
         <button id=generate_score onclick="attribute()">Generate!</button>
         <ul>
@@ -118,18 +119,73 @@
             <li class='modifier' id="chamod"></li>
         </ul>
     </div>
-    <div class="passive_wisdome"></div><p>Passive Wisdome</p>
+    <div class="passive_wisdome"><p>Passive Wisdome</p></div>
     <div class="player_stats">
-    <p id="armourclass"></p><br>
-    <p>armour class</p>
-    <p id="initiative"></p>
-    <p>initiative</p>
-    <p id="Speed"></p>
-    <p>Speed</p>
-    <p id="hp"></p>
-    <p>Maximum hit points</p>
-    <p id="hit_die"></p>
-    <p>Current hit die</pß>
+        <p>Inspiration</p><p id="inspiration"></p>
+        <p>Profiency Bonus</p><p id="profiencyB"></p>
+        <p id="armourclass"></p><br>
+        <p>armour class</p>
+        <p id="initiative"></p>
+        <p>initiative</p>
+        <p id="Speed"></p>
+        <p>Speed</p>
+        <p id="hp"></p>
+        <p>Maximum hit points</p>
+        <p id="hit_die"></p>
+        <p>Current hit die</p>
+        <form>
+            <p>Successes</p><input type="checkbox" name="Successes 1" value="sucess"><input type="checkbox" name="Successes 2" value="sucess"><input type="checkbox" name="Successes 3" value="sucess">
+            <p>Failures</p><input type="checkbox" name="Failures 1" value="failure"><input type="checkbox" name="Failures 2" value="failure"><input type="checkbox" name="Failures 3" value="failure">
+        </form>
+    </div>
+    <div id="savingthrows">
+        <h2>Saving throws</h2>
+        <p>Strength</p>
+        <p>Dexterity</p>
+        <p>Constitution</p> 
+        <p>Intelligence</p>
+        <p>Wisdom</p>
+        <p>Charisma</p>
+    </div>
+    <div id="skills">
+        <h2>Skills</h2>
+        <p>Acrobatics (Dex)</p>
+        <p>Animal Handling (Wis)</p>
+        <p>Arcana (Int)</p>
+        <p>Athletics (Str)</p>
+        <p>Deception (Cha)</p>
+        <p>History (Int)</p>
+        <p>Insight (Wis)</p>
+        <p>Intimidation (Cha)</p>
+        <p>Investigation (Int)</p>
+        <p>Medicine (Wis)</p>
+        <p>Nature (Int)</p>
+        <p>Perception (Wis)</p>
+        <p>Performance (Cha)</p>
+        <p>Persuasion (Cha)</p>
+        <p>Religion (Int)</p>
+        <p>Sleight of Hand (Dex)</p>
+        <p>Stealth (Dex)</p>
+        <p>Survival (Wis)</p>
+    </div>
+    <div class="attacks_spell">
+        <h2>Attacks & Spellcasting</h2>
+        <form>
+            <p>Name</p>
+            <input type="text" name="attack1">
+            <input type="text" name="attack2">
+            <input type="text" name="attack3">
+            <p>ATK Bonus</p>
+            <input type="number" name="atkb1">
+            <input type="number" name="atkb2">
+            <input type="number" name="atkb3">
+            <p>Damage/Type</p>
+            <input type="text" name="damagetype1">
+            <input type="text" name="damagetype2">
+            <input type="text" name="damagetype3"><br>
+            <textarea name="as_desc" rows="10" cols="30"></textarea>
+        </form>
+    </div>
     </div>
     <div class="background">
         <h2>Alignment description</h2>
