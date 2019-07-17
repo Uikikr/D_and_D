@@ -61,7 +61,7 @@ const Races = {
     'Hill Dwarf': {
         speed: 25,
         ability: () => {
-            parseInt(document.getElementById('consco').innerHTML) + 2
+            parseInt(document.getElementById('consco').innerHTML) + 2;
         }, //why you no work? Bork
     },
     'High elf': {

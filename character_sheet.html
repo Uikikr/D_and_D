@@ -72,15 +72,20 @@
             <input type="number" name="Experience" id="XP" onkeypress="generateLevel()" min="0" max="355000" value="0">
         </form>
         <form class="top_sheet 2">
+            <p>Age:</p>
+            <input type="number" name="age">
             <p>Gender:</p>
             <input type="text" name="Gender">
             <p>Height:</p>
             <input type="text" name="height">
             <p>Weight:</p>
             <input type="number" name="Weight">
-            <p>Player Name:</p>
-            <input type="text" name="playerName">
-
+            <p>Hair:</p>
+            <input type="number" name="Hair">
+            <p>Eye Color:</p>
+            <input type="text" name="eye-color">
+            <p>Skin:</p>
+            <input type="text" name="skin">
         </form>
     </div>
     <div class="wrap_1">
@@ -170,36 +175,53 @@
     </div>
     <div class="attacks_spell">
         <h2>Attacks & Spellcasting</h2>
+        <table>
         <form>
-            <p>Name</p>
-            <input type="text" name="attack1">
-            <input type="text" name="attack2">
-            <input type="text" name="attack3">
-            <p>ATK Bonus</p>
-            <input type="number" name="atkb1">
-            <input type="number" name="atkb2">
-            <input type="number" name="atkb3">
-            <p>Damage/Type</p>
-            <input type="text" name="damagetype1">
-            <input type="text" name="damagetype2">
-            <input type="text" name="damagetype3"><br>
+            <tr>
+                <th><p>Name</p></th>
+                <th><p>ATK Bonus</p></th>
+                <th><p>Damage/Type</p></th>
+            </tr>
+            <tr>
+                <th><input type="text" name="attack1"></th>
+                <th><input type="number" name="atkb1"></th>
+                <th><input type="text" name="damagetype1"></th>
+            </tr>
+            <tr>
+                    <th><input type="text" name="attack2"></th>
+                   <th><input type="number" name="atkb2"></th>
+                <th><input type="text" name="damagetype2"></th>
+            </tr>
+            <tr>
+                    <th><input type="text" name="attack3"></th>
+                    <th><input type="number" name="atkb3"></th>
+                    <th><input type="text" name="damagetype3"></th>
+            </tr>
+        </table>
             <textarea name="as_desc" rows="10" cols="30"></textarea>
         </form>
+        
     </div>
     </div>
     <div class="background">
         <h2>Alignment description</h2>
         <p id="align_desc"></p>
-        <form>
-        <h2>Personality traits</h2>
-        <textarea name="per_trait" rows="10" cols="30">What is your traits?</textarea>
-        <h2>Ideals</h2>
-        <textarea name="ideals" rows="10" cols="30">What is your ideals?</textarea>
-        <h2>Bonds</h2>
-        <textarea name="bonds" rows="10" cols="30">Do you have any friends? Haha no you play D&D</textarea>
-        <h2>Flaws</h2>
-        <textarea name="flaws" rows="10" cols="30">Surley you have a few of these!</textarea>
-        </form>
+        <table>
+            <tr>
+            <th><h2>Personality traits</h2></th>
+            <th><h2>Ideals</h2></th>
+            <th><h2>Bonds</h2></th>
+            <th><h2>Flaws</h2></th>
+            </tr>
+            <tr>
+                <form>
+                <td><textarea name="per_trait" rows="10" cols="30">What is your traits?</textarea></td>
+                <td><textarea name="ideals" rows="10" cols="30">What is your ideals?</textarea></td>
+                <td><textarea name="bonds" rows="10" cols="30">Do you have any friends? Haha no you play D&D</textarea></td>
+                <td><textarea name="flaws" rows="10" cols="30">Surley you have a few of these!</textarea></td>
+                </form>
+            </tr>
+        </table>
     </div>
     <script type="text/JavaScript" src=script.js></script>
     </body>
