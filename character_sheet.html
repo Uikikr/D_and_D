@@ -1,229 +1,296 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="character_style.css">
+    <!--CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--<link rel="stylesheet" type="text/css" href="character_style.css">-->
+    <!--Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Homemade+Apple&display=swap" rel="stylesheet">
     <title>Character creation!</title>
 </head>
+
 <body>
-    <div class=playerID>
+    <div id="playerID">
         <form class="top_sheet 1">
-            <p>Character Name:</p>
-            <input type="text" name="characterName">
-            <p>Race:</p>
-            <select id=race onchange="raceAttributes()">
-                <option>---</option>
-                <optgroup label="Dwarf">
-                <option>Hill Dwarf</option>
-                <option>Mountain Dwarf</option>
-                </optgroup>
-                <optgroup label="Elf">
-                <option>High Elf</option>
-                <option>Wood Elf</option>
-                </optgroup>
-                <optgroup label="Halfling">
-                <option>Light Foot</option>
-                <option>Stout</option>
-                </optgroup>
-                <option>Human</option>
-            </select>
-            <p>Class:</p>
-            <select id=classP onchange="classAttributes()">
-                <option>----</option>
-                <option>Fighter</option>
-                <option>Cleric</option>
-                <option>Rogue</option>
-                <option>Wizard</option>
-            </select>
-            <p>Level:</p>
-            <p id="level" class="levelC"></p>
-            <p>Occupation:</p>
-            <select id=Occupation>
-                <option>----</option>
-                <option>Acolyte</option>
-                <option>Criminal</option>
-                <option>Folk Hero</option>
-                <option>Noble</option>
-                <option>Sage</option>
-                <option>Soldier</option>
-            </select>
-            <p>Alignment:</p>
-            <select id=alignment onchange="getAlignmentDescription()">
-                <option>----</option>
-                <optgroup label="Good">
-                <option>Lawful Good</option>
-                <option>Neutral Good</option>
-                <option>Chaotic Good</option>
-                </optgroup>
-                <optgroup label="Neutral">
-                <option>Lawful Neutral</option>
-                <option>Neutral</option>
-                <option>Chaotic Neutral</option>
-                </optgroup>
-                <optgroup label="Evil">
-                <option>Lawful Evil</option>
-                <option>Neutral Evil</option>
-                <option>Chaotic Evil</option>
-                </optgroup>
-            </select>
-            <p>Experience points:</p>
-            <input type="number" name="Experience" id="XP" onkeypress="generateLevel()" min="0" max="355000" value="0">
-        </form>
-        <form class="top_sheet 2">
-            <p>Age:</p>
-            <input type="number" name="age">
-            <p>Gender:</p>
-            <input type="text" name="Gender">
-            <p>Height:</p>
-            <input type="text" name="height">
-            <p>Weight:</p>
-            <input type="number" name="Weight">
-            <p>Hair:</p>
-            <input type="number" name="Hair">
-            <p>Eye Color:</p>
-            <input type="text" name="eye-color">
-            <p>Skin:</p>
-            <input type="text" name="skin">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Character Name:</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Name" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="race">Race:</label>
+                </div>
+                <select class="custom-select" id="race" onchange="raceAttributes()">
+                    <option>---</option>
+                    <optgroup label="Dwarf">
+                        <option>Hill Dwarf</option>
+                        <option>Mountain Dwarf</option>
+                    </optgroup>
+                    <optgroup label="Elf">
+                        <option>High Elf</option>
+                        <option>Wood Elf</option>
+                    </optgroup>
+                    <optgroup label="Halfling">
+                        <option>Light Foot</option>
+                        <option>Stout</option>
+                    </optgroup>
+                    <option>Human</option>
+                </select>
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="classP">Class:</label>
+                </div>
+                <select id="classP" class="custom-select" onchange="classAttributes()">
+                    <option>----</option>
+                    <option>Fighter</option>
+                    <option>Cleric</option>
+                    <option>Rogue</option>
+                    <option>Wizard</option>
+                </select>
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="Occupation">Occupation:</label>
+                </div>
+                <select class="custom-select" id="Occupation">
+                    <option>----</option>
+                    <option>Acolyte</option>
+                    <option>Criminal</option>
+                    <option>Folk Hero</option>
+                    <option>Noble</option>
+                    <option>Sage</option>
+                    <option>Soldier</option>
+                </select>
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="alignment">Alignment:</label>
+                </div>
+                <select class="custom-select" id="alignment" onchange="getAlignmentDescription()">
+                    <option>----</option>
+                    <optgroup label="Good">
+                        <option>Lawful Good</option>
+                        <option>Neutral Good</option>
+                        <option>Chaotic Good</option>
+                    </optgroup>
+                    <optgroup label="Neutral">
+                        <option>Lawful Neutral</option>
+                        <option>Neutral</option>
+                        <option>Chaotic Neutral</option>
+                    </optgroup>
+                    <optgroup label="Evil">
+                        <option>Lawful Evil</option>
+                        <option>Neutral Evil</option>
+                        <option>Chaotic Evil</option>
+                    </optgroup>
+                </select>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Level:</span>
+                </div>
+                <p id="level" class="levelC form-control"></p>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Experience points:</span>
+                </div>
+                <input type="number" class="form-control" name="Experience" id="XP" onkeypress="generateLevel()" min="0"
+                    max="355000" value="0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Age:</span>
+                </div>
+                <input type="number" class="form-control" name:"age" aria-label="age">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Gender:</span>
+                </div>
+                <input type="text" class="form-control" name:"gender" aria-label="gender">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Height</span>
+                </div>
+                <input type="number" class="form-control" name:"height" aria-label="height">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Weight:</span>
+                </div>
+                <input type="number" class="form-control" name:"weight" aria-label="Weight">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Hair:</span>
+                </div>
+                <input type="text" class="form-control" name:"hair" aria-label="hair">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Eye Color:</span>
+                </div>
+                <input type="text" class="form-control" name:"eye-color" aria-label="Eye-color">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Skin</span>
+                </div>
+                <input type="text" class="form-control" name:"skin" aria-label="Skin">
+            </div>
+            <!--dropdown forms end div-->
         </form>
     </div>
     <div class="wrap_1">
-    <div class= ability_score>
-        <button id=generate_score onclick="attribute()">Generate!</button>
-        <ul>
-            <li>Strength</li>
-            <li>Score</li>
-            <li class='att_score' id="strsco"></li>
-            <li>Modifier</li>
-            <li class='modifier' id="strmod"></li>
-            <li>Dexterity</li>
-            <li>Score</li>
-            <li class='att_score' id="dexsco"></li>
-            <li>Modifier</li>
-            <li class='modifier' id="dexmod"></li>
-            <li>Constitution</li>
-            <li>Score</li>
-            <li class='att_score' id="consco"></li>
-            <li>Modifier</li>
-            <li class='modifier' id="conmod"></li>
-            <li>Intelligence</li>
-            <li>Score</li>
-            <li class='att_score' id="intsco"></li>
-            <li>Modifier</li>
-            <li class='modifier' id="intmod"></li>
-            <li>Wisdom</li>
-            <li>Score</li>
-            <li class='att_score' id="wissco"></li>
-            <li>Modifier</li>
-            <li class='modifier' id="wismod"></li>
-            <li>Charisma</li>
-            <li>Score</li>
-            <li class='att_score' id="chasco"></li>
-            <li>Modifier</li>
-            <li class='modifier' id="chamod"></li>
-        </ul>
-    </div>
-    <div class="passive_wisdome"><p>Passive Wisdome</p></div>
-    <div class="player_stats">
-        <p>Inspiration</p><p id="inspiration"></p>
-        <p>Profiency Bonus</p><p id="profiencyB"></p>
-        <p id="armourclass"></p><br>
-        <p>armour class</p>
-        <p id="initiative"></p>
-        <p>initiative</p>
-        <p id="Speed"></p>
-        <p>Speed</p>
-        <p id="hp"></p>
-        <p>Maximum hit points</p>
-        <p id="hit_die"></p>
-        <p>Current hit die</p>
-        <form>
-            <p>Successes</p><input type="checkbox" name="Successes 1" value="sucess"><input type="checkbox" name="Successes 2" value="sucess"><input type="checkbox" name="Successes 3" value="sucess">
-            <p>Failures</p><input type="checkbox" name="Failures 1" value="failure"><input type="checkbox" name="Failures 2" value="failure"><input type="checkbox" name="Failures 3" value="failure">
-        </form>
-    </div>
-    <div id="savingthrows">
-        <h2>Saving throws</h2>
-        <p>Strength</p>
-        <p>Dexterity</p>
-        <p>Constitution</p> 
-        <p>Intelligence</p>
-        <p>Wisdom</p>
-        <p>Charisma</p>
-    </div>
-    <div id="skills">
-        <h2>Skills</h2>
-        <p>Acrobatics (Dex)</p>
-        <p>Animal Handling (Wis)</p>
-        <p>Arcana (Int)</p>
-        <p>Athletics (Str)</p>
-        <p>Deception (Cha)</p>
-        <p>History (Int)</p>
-        <p>Insight (Wis)</p>
-        <p>Intimidation (Cha)</p>
-        <p>Investigation (Int)</p>
-        <p>Medicine (Wis)</p>
-        <p>Nature (Int)</p>
-        <p>Perception (Wis)</p>
-        <p>Performance (Cha)</p>
-        <p>Persuasion (Cha)</p>
-        <p>Religion (Int)</p>
-        <p>Sleight of Hand (Dex)</p>
-        <p>Stealth (Dex)</p>
-        <p>Survival (Wis)</p>
-    </div>
-    <div class="attacks_spell">
-        <h2>Attacks & Spellcasting</h2>
-        <table>
-        <form>
-            <tr>
-                <th><p>Name</p></th>
-                <th><p>ATK Bonus</p></th>
-                <th><p>Damage/Type</p></th>
-            </tr>
-            <tr>
-                <th><input type="text" name="attack1"></th>
-                <th><input type="number" name="atkb1"></th>
-                <th><input type="text" name="damagetype1"></th>
-            </tr>
-            <tr>
-                    <th><input type="text" name="attack2"></th>
-                   <th><input type="number" name="atkb2"></th>
-                <th><input type="text" name="damagetype2"></th>
-            </tr>
-            <tr>
-                    <th><input type="text" name="attack3"></th>
-                    <th><input type="number" name="atkb3"></th>
-                    <th><input type="text" name="damagetype3"></th>
-            </tr>
-        </table>
+        <div class=ability_score>
+            <button id=generate_score onclick="attribute()">Generate!</button>
+            <ul>
+                <li>Strength</li>
+                <li>Score</li>
+                <li class='att_score' id="strsco"></li>
+                <li>Modifier</li>
+                <li class='modifier' id="strmod"></li>
+                <li>Dexterity</li>
+                <li>Score</li>
+                <li class='att_score' id="dexsco"></li>
+                <li>Modifier</li>
+                <li class='modifier' id="dexmod"></li>
+                <li>Constitution</li>
+                <li>Score</li>
+                <li class='att_score' id="consco"></li>
+                <li>Modifier</li>
+                <li class='modifier' id="conmod"></li>
+                <li>Intelligence</li>
+                <li>Score</li>
+                <li class='att_score' id="intsco"></li>
+                <li>Modifier</li>
+                <li class='modifier' id="intmod"></li>
+                <li>Wisdom</li>
+                <li>Score</li>
+                <li class='att_score' id="wissco"></li>
+                <li>Modifier</li>
+                <li class='modifier' id="wismod"></li>
+                <li>Charisma</li>
+                <li>Score</li>
+                <li class='att_score' id="chasco"></li>
+                <li>Modifier</li>
+                <li class='modifier' id="chamod"></li>
+            </ul>
+        </div>
+        <div class="passive_wisdome">
+            <p>Passive Wisdome</p>
+        </div>
+        <div class="player_stats">
+            <p>Inspiration</p>
+            <p id="inspiration"></p>
+            <p>Profiency Bonus</p>
+            <p id="profiencyB"></p>
+            <p id="armourclass"></p><br>
+            <p>armour class</p>
+            <p id="initiative"></p>
+            <p>initiative</p>
+            <p id="Speed"></p>
+            <p>Speed</p>
+            <p id="hp"></p>
+            <p>Maximum hit points</p>
+            <p id="hit_die"></p>
+            <p>Current hit die</p>
+            <form>
+                <p>Successes</p><input type="checkbox" name="Successes 1" value="sucess"><input type="checkbox"
+                    name="Successes 2" value="sucess"><input type="checkbox" name="Successes 3" value="sucess">
+                <p>Failures</p><input type="checkbox" name="Failures 1" value="failure"><input type="checkbox"
+                    name="Failures 2" value="failure"><input type="checkbox" name="Failures 3" value="failure">
+            </form>
+        </div>
+        <div id="savingthrows">
+            <h2>Saving throws</h2>
+            <p>Strength</p>
+            <p>Dexterity</p>
+            <p>Constitution</p>
+            <p>Intelligence</p>
+            <p>Wisdom</p>
+            <p>Charisma</p>
+        </div>
+        <div id="skills">
+            <h2>Skills</h2>
+            <p>Acrobatics (Dex)</p>
+            <p>Animal Handling (Wis)</p>
+            <p>Arcana (Int)</p>
+            <p>Athletics (Str)</p>
+            <p>Deception (Cha)</p>
+            <p>History (Int)</p>
+            <p>Insight (Wis)</p>
+            <p>Intimidation (Cha)</p>
+            <p>Investigation (Int)</p>
+            <p>Medicine (Wis)</p>
+            <p>Nature (Int)</p>
+            <p>Perception (Wis)</p>
+            <p>Performance (Cha)</p>
+            <p>Persuasion (Cha)</p>
+            <p>Religion (Int)</p>
+            <p>Sleight of Hand (Dex)</p>
+            <p>Stealth (Dex)</p>
+            <p>Survival (Wis)</p>
+        </div>
+        <div class="attacks_spell">
+            <h2>Attacks & Spellcasting</h2>
+            <table>
+                <form>
+                    <tr>
+                        <th>
+                            <p>Name</p>
+                        </th>
+                        <th>
+                            <p>ATK Bonus</p>
+                        </th>
+                        <th>
+                            <p>Damage/Type</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="attack1"></th>
+                        <th><input type="number" name="atkb1"></th>
+                        <th><input type="text" name="damagetype1"></th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="attack2"></th>
+                        <th><input type="number" name="atkb2"></th>
+                        <th><input type="text" name="damagetype2"></th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" name="attack3"></th>
+                        <th><input type="number" name="atkb3"></th>
+                        <th><input type="text" name="damagetype3"></th>
+                    </tr>
+            </table>
             <textarea name="as_desc" rows="10" cols="30"></textarea>
-        </form>
-        
-    </div>
+            </form>
+
+        </div>
     </div>
     <div class="background">
         <h2>Alignment description</h2>
         <p id="align_desc"></p>
         <table>
             <tr>
-            <th><h2>Personality traits</h2></th>
-            <th><h2>Ideals</h2></th>
-            <th><h2>Bonds</h2></th>
-            <th><h2>Flaws</h2></th>
+                <th>
+                    <h2>Personality traits</h2>
+                </th>
+                <th>
+                    <h2>Ideals</h2>
+                </th>
+                <th>
+                    <h2>Bonds</h2>
+                </th>
+                <th>
+                    <h2>Flaws</h2>
+                </th>
             </tr>
             <tr>
                 <form>
-                <td><textarea name="per_trait" rows="10" cols="30">What is your traits?</textarea></td>
-                <td><textarea name="ideals" rows="10" cols="30">What is your ideals?</textarea></td>
-                <td><textarea name="bonds" rows="10" cols="30">Do you have any friends? Haha no you play D&D</textarea></td>
-                <td><textarea name="flaws" rows="10" cols="30">Surley you have a few of these!</textarea></td>
+                    <td><textarea name="per_trait" rows="10" cols="30">What is your traits?</textarea></td>
+                    <td><textarea name="ideals" rows="10" cols="30">What is your ideals?</textarea></td>
+                    <td><textarea name="bonds" rows="10"
+                            cols="30">Do you have any friends? Haha no you play D&D</textarea></td>
+                    <td><textarea name="flaws" rows="10" cols="30">Surley you have a few of these!</textarea></td>
                 </form>
             </tr>
         </table>
     </div>
     <script type="text/JavaScript" src=script.js></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
 
 </html>
